@@ -27,7 +27,7 @@ class ClientService:
         updated_clients.append(client)
     self._save_to_disk(updated_client)
   
-  def _save_to_disk(updated_clients):
+  def _save_to_disk(self,updated_clients):
     tmp_table_name = self.table_name +'.tmp'
     with open(tmp_table_name) as f:
       writer =csv.DictWriter(f, fieldnames = ClientModel.schema())
